@@ -1,0 +1,126 @@
+@keyframes load {
+    0% {
+        visibility: hidden;
+        opacity: .3;
+    }
+    50% {
+        visibility: visible;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+@keyframes leave {
+    0% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+
+@mixin items-bg {
+    .bft {
+        background-color: orange;
+        color: white;
+    }
+    .lch {
+        background-color: green;
+        color: white;
+    }
+    .dnr {
+        background-color: red;
+        color: white;
+    }
+    .drk {
+        background-color: purple;
+        color: white;
+    }
+}
+@mixin menu-item {
+    padding: 10px 10px;
+    width: 60%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 5px 0px;
+    border-radius: 10px;
+    position: relative;
+    text-align: center;
+    i {
+        position: absolute;
+        right: 0;
+        margin-right: 10px;
+        font-size: 1.5rem;
+    }
+    @include phone {
+        width: 80%;
+    }
+}
+@mixin modal {
+    .checkout-modal-hidden {
+        display: none;
+    }
+    .checkout-modal-show {
+        display: grid;
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100vh;
+        width: 100vw;
+        background-color: #313131b9;
+        z-index: 10;
+        .inner-modal {
+            display: grid;
+            grid-template-rows: 1fr 1fr;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+            text-align: center;
+            width: 50%;
+            height: 50%;
+            // background-color: white;
+            color: black;
+            position: relative;
+            border-radius: 20px;
+            top: 25%;
+            left: 25%;
+            &::before {
+                content: '';
+                background-color: white;
+                height: 100%;
+                width: 100%;
+                position: absolute;
+                z-index: -2;
+                border-radius: 20px;
+            }
+            &::after {
+                content: '';
+                background-image: url(../../static/assets/checkout.jpg);
+                background-size: cover;
+                height: 100%;
+                width: 100%;
+                position: absolute;
+                z-index: -2;
+                border-radius: 20px;
+                opacity: .7;
+            }
+            div {
+                font-size: 3rem;
+            }
+            .close {
+                position: absolute;
+                top: 0;
+                right: 0;
+                padding-right: 10px;
+                padding-top: 10px;
+            }
+        }
+    }
+}
+
+@mixin phone {
+    @media (max-width: 700px){
+        @content
+    }
+}

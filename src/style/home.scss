@@ -1,0 +1,20 @@
+.home-wrap {
+    display: grid;
+    grid-template-rows: [content-s] 1fr [content-e] 1fr;
+    color: white;
+    justify-items: center;
+    background-image: url(../../static/assets/home.jpg);
+    background-size: cover;
+    background-position: bottom;
+    height: 100%;
+    .home {
+        margin-left: 40px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        grid-row: content-s/content-e;
+        p {
+            font-size: 1.5rem;
+        }
+    } 
+}

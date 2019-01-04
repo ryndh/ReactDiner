@@ -1,0 +1,90 @@
+.user-cart-container {
+    // padding: 20px 0px;
+    // margin: 20px 30px;
+    // border: 10px solid black;
+    color: black;
+    overflow: hidden;
+    background-color: white;
+    grid-column: two-s/two-e;
+    grid-row: menu-s/menu-e;
+    display: grid;
+    align-items: center;
+    justify-items: center;
+    grid-template-rows: [list-s] 90%[list-e button-s] 10% [button-e];
+    @include phone {
+        height: 80%;
+    }
+    .user-cart {
+        height: 100%;
+        width: 100%;
+        grid-row: list-s/list-e;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        .order-heading {
+            font-size: 3em;
+        }
+        .drop-here {
+            font-size: 3rem;
+            text-align: center;
+        }
+        @include items-bg;
+        .user-cart-item {
+            @include menu-item;
+            p {
+                margin: 0;
+            }
+        }
+    }
+    .buttons {
+        grid-row: button-s/button-e;
+        width: 100%;
+        display: flex;
+        justify-content: space-around;
+        padding: 0px 30px;
+        .menu-total {
+            font-size: 1.5rem;
+        }
+        @include phone {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            justify-items: center;
+            align-items: center;
+            :nth-child(1) {
+                border: none;
+            }
+            :nth-child(3) {
+                border: none;
+            }
+        }
+        button {
+            width: 30%;
+            border-radius: 10px;
+            border-style: none;
+            outline: none;
+            border: 2px solid black;
+            background-color: white;
+            color: black;
+            transition: .3s ease;
+            @include phone {
+                border: none;
+                border-radius: 0px;
+                border-right: 1px solid;
+                border-left: 1px solid;
+                width: 100%;
+                height: 100%;
+            }
+            &:hover {
+                background-color: white;
+                border-radius: 10px;
+                color: black;
+                transform: scale(1.03) translateY(-2px);
+                transition: .3s ease;
+                @include phone {
+                    transform: none;
+                    border-radius: 5px;
+                }
+            }
+        }
+    }
+}
