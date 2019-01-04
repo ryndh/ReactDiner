@@ -13,6 +13,9 @@
         flex-direction: column;
         justify-content: center;
         grid-row: content-s/content-e;
+        h1 {
+            animation: slide 2s ease 0s 1 forwards;
+        }
         p {
             font-size: 1.5rem;
         }

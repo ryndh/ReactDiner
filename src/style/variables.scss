@@ -1,4 +1,11 @@
-
+@keyframes slide {
+    0% {
+        transform: translateX(0px)
+    }
+    100% {
+        transform: translateX(30px)
+    }
+}
 @keyframes rise {
     0% {
         transform: translateX(2000px)
