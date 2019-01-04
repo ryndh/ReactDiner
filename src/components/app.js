@@ -87,7 +87,7 @@ export default class Menu extends Component {
       <div className='restaurant'>
         <div className={this.state.showModal ? 'checkout-modal-show' : 'checkout-modal-hidden'} onClick={this.closeOut}>
           <div className='inner-modal'>
-            <div>Your total is ${this.state.userTotal.toFixed(2)}</div>
+            <div>Your total is: ${this.state.userTotal.toFixed(2)}</div>
             <div className='close'>x</div>
           </div>
         </div>
@@ -119,7 +119,7 @@ export default class Menu extends Component {
             {this.state.userCart.map((userMenuItem, index) => {
               return (
                 <div
-                  className={`user-cart-item ${userMenuItem[2]}`}
+                  className={`user-cart-item ${userMenuItem[2]} ${this.state.showModal ? 'leave': ''}`}
                   key={index}>
                   <p>{userMenuItem[0]} -- {parseFloat(userMenuItem[1]).toFixed(2)}</p>
                   <i className="far fa-times-circle" onClick={() => this.remover(userMenuItem)}></i>

@@ -35,6 +35,9 @@
                 margin: 0;
             }
         }
+        .leave {
+            animation: leave 1s ease 0s 1 forwards;
+        }
     }
     .buttons {
         grid-row: button-s/button-e;
